@@ -1,0 +1,41 @@
+Ad-hoc command to reboot system
+
+ansible -i /opt/inventory all -a "/sbin/reboot" -u username --become -K
+
+Ad-hoc command to copy files
+
+ansible -i /opt/inventory all -m ansible.builtin.copy -a "src=/hom/ubuntu/test.txt dest=/home/ubuntu" --u username --become -K
+
+Ad-hoc command to change permissions, ownership
+
+ansible -i /opt/inventory all -m ansible.builtin.file -a "dest=/home/ubuntu/test.txt mode=644 owner=username group=groupname" -u username --become -K
+
+Ad-hoc command to create and delete directory
+
+ansible -i /opt/inventory all -m ansible.builtin.file -a "dest=/home/ubuntu/dir1 mode=644 owner=username group=groupname state=directory" -u username --become -K
+
+ansible -i /opt/inventory all -m ansible.builtin.file -a "dest=/home/ubuntu/dir1 state=absent" -u username --become -K
+
+Ad-hoc command to install, uninstall and update package
+
+ansible -i /opt/inventory all -m ansible.builtin.apt -a "name=packagename state=present" -u username --become -K
+
+ansible -i /opt/inventory all -m ansible.builtin.apt -a "name=packagename state=absent" -u username --become -K
+
+ansible -i /opt/inventory all -m ansible.builtin.apt -a "name=packagename state=latest" -u username --become -K
+
+Ad-hoc command to create and delete user
+
+ansible -i /opt/inventory all -m ansible.builtin.user -a "name=ansible" -u username --become -K
+
+ansible -i /opt/inventory all -m ansible.builtin.user -a "name=ansible state=absent" -u username --become -K
+
+Ad-hoc command to start,stop and restart service
+
+ansible -i /opt/inventory all -m ansible.builtin.service -a "name=servicename state=started" -u username --become -K
+
+ansible -i /opt/inventory all -m ansible.builtin.service -a "name=servicename state=stopped" -u username --become -K
+
+ansible -i /opt/inventory all -m ansible.builtin.service -a "name=servicename state=restarted" -u username --become -K
+
+
