@@ -1,0 +1,5 @@
+We need to add the ansible repository which will have the dependancies detials and packages to install the ansible
+
+sudo add-apt-repository --yess --update ppa:ansible/ansible
+
+sudo apt install ansible
