@@ -1,6 +1,6 @@
 
 ---
-- name: create user and group and create a file with 644 prmission under that ownership and provide tags for each task
+- name: playbook with tags
   hosts: all
   become: true
   tasks:
@@ -22,3 +22,18 @@
      group: ansible
      tags:
      - fileCreate
+
+  - name: install nginx
+    apt:
+     name: nginx
+     state: present
+     tags:
+     - nginxInstall
+
+  - name: enable nginx
+    service:
+     name: nginx
+     state: started
+     enabled: true
+     tags:
+     - nginxEnalbe
