@@ -1,0 +1,10 @@
+---
+- name: create file with content directly in target servers
+  hosts: all
+  become: true
+  tasks:
+  - name: create file with content directly in target servers
+    copy:
+     dest: /home/ubuntu/file.txt
+     content:
+      Hello
