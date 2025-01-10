@@ -4,7 +4,8 @@
   become: true
   tasks:
   - name: change permission, ownership of file in target servers
-    dest: /home/ubuntu/file.txt
-    mode: 0644
-    owner: ubuntu
-    group: ubuntu
+    file:
+     dest: /home/ubuntu/file.txt
+     mode: 0644
+     owner: ubuntu
+     group: ubuntu
