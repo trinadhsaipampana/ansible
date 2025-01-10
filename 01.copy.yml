@@ -1,0 +1,9 @@
+---
+- name: copy files in a directory to target servers
+  hosts: all
+  become: true
+  tasks:
+  - name: copy files along with directory
+    copy:
+     src: /home/ubuntu/dir/test.txt
+     dest: /home/ubuntu/
