@@ -5,5 +5,5 @@
   tasks:
   - name: copy file
     copy:
-     src" /home/ubuntu/test.txt
+     src: /home/ubuntu/test.txt
      dest: /home/ubuntu/
