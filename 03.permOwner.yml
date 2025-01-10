@@ -1,0 +1,10 @@
+---
+- name: change permission and ownership of file in target servers
+  hosts: all
+  become: true
+  tasks:
+  - name: change permission, ownership of file in target servers
+    dest: /home/ubuntu/file.txt
+    mode: 0644
+    owner: ubuntu
+    group: ubuntu
