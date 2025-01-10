@@ -8,3 +8,4 @@
      dest: /home/ubuntu/file.txt
      content:
       Hello
+     backup: true
