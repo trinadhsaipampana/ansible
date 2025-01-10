@@ -1,5 +1,5 @@
 ---
-- name: create user and group and create a file with 644 prmission under that ownership
+- name: create user and group and create a file with 0744 permission under that ownership
   hosts: all
   become: true
   tasks:
@@ -8,12 +8,12 @@
      name: ansible
      state: present
 
-  - name: create file with 644 permission under ansible ownership
+  - name: create file with 0744 permission under ansible ownership
     copy:
      dest: /home/ubuntu/test.txt
      content:
       Hi
       This is Trinadh
-     mode: 644
+     mode: 0744
      owner: ansible
      group: ansible
