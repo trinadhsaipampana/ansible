@@ -1,0 +1,15 @@
+---
+- name: create file and directory
+  hosts: all
+  become: true
+  tasks:
+  - name: create directory
+    file:
+     dest: /home/ubuntu/folder
+     state: directory
+  - name: create file
+    file:
+     dest: /home/ubuntu/folder/file.txt
+     state: touch
+     content:
+      Hey buddy
