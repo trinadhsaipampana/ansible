@@ -1,0 +1,14 @@
+---
+- name: playbook with tags
+  hosts: all
+  become: true
+  tasks:
+  - name: install nginx
+    apt:
+     name: nginx
+     state: present
+  - name: enable nginx
+    service:
+     name: nginx
+     state: started
+     enabled: true
