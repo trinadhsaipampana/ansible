@@ -11,5 +11,3 @@
     file:
      dest: /home/ubuntu/folder/file.txt
      state: touch
-     content:
-      Hey buddy
