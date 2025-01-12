@@ -1,0 +1,9 @@
+---
+- name: run the script in remote server and store the particular file
+  hosts: 10.0.1.11
+  become: true
+  tasks:
+  - name: run the script in remote server
+    shell: /home/ubuntu/script.sh >> script.log
+    args:
+     creates: /home/ubuntu/script.log
