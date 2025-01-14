@@ -1,0 +1,16 @@
+---
+- name: cron setup
+  hosts: 10.0.1.11
+  become: true
+
+  tasks:
+  - name: cron setup
+    cron:
+     name: run /home/ubuntu/script.sh at 01:25 am
+     minute: 25
+     hour: 01
+     day: 13
+     month: 01
+     weekday: "*"
+     job: /home/ubuntu/script.sh
+     disabled: yes
