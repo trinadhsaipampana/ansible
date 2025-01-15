@@ -1,9 +1,9 @@
 ---
 - name: process management
-  hosts:10.0.1.11
+  hosts: 10.0.1.11
   become: true
 
   tasks:
   - name: find and kill the process
-    ignore_error: yes
+    ignore_errors: yes
     shell: "pgrep nginx | xargs kill"
