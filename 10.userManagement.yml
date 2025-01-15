@@ -1,0 +1,12 @@
+---
+- name: user management
+  hosts: 10.0.1.11
+  become: true
+
+  tasks:
+  - name: user create
+    user:
+     name: ansible
+     comment: ansible user
+     shell: /bin/bash
+     state: present
