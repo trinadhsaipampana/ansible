@@ -1,0 +1,13 @@
+---
+- name: with_items usage
+  hosts: 10.0.1.11
+  become: true
+
+  tasks:
+  - name: uninstall git, nginx
+    apt:
+     name: "{{ item }}"
+     state: absent
+    with_items:
+    - git
+    - nginx
