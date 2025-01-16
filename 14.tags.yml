@@ -1,0 +1,17 @@
+---
+- name: use tags in ansible
+  hosts: 10.0.1.11
+  become: true
+
+  tasks:
+  - name: install nginx
+    apt:
+     name: nginx
+     state: present
+    tags: install-nginx
+
+  - name: install git
+    apt:
+     name: git
+     state: present
+    tags: install-git
