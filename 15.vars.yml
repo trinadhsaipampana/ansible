@@ -1,0 +1,14 @@
+---
+- name: variable usage
+  hosts: 10.0.1.11
+  become: true
+  vars:
+  - app: nginx
+  - install: present
+  - uninstall: absent
+
+  tasks:
+  - name: uninstall nginx
+    apt:
+     name: "{{ app }}"
+     state: "{{ uninstall }}"
