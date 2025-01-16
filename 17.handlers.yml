@@ -1,0 +1,24 @@
+---
+- name: usage of handlers
+  hosts: 10.0.1.11
+  become: true
+
+  tasks:
+  - name: install firewalld
+    apt:
+     name: firewalld
+     state: present
+
+  - name: enable port 80 tcp
+    firewalld:
+     port: 80/tcp
+     permanent: true
+     state: enabled
+    notify:
+    - reload firewalld
+  handlers:
+  - name: reload firewalld
+    service:
+     name: firewalld
+     state: reloaded
+     
