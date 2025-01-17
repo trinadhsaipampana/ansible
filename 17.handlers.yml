@@ -16,6 +16,7 @@
      state: enabled
     notify:
     - reload firewalld
+  
   handlers:
   - name: reload firewalld
     service:
