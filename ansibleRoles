@@ -1,0 +1,27 @@
+To create roles we need to execute the following command in /etc/ansible/roles
+
+ansible-galaxy init roleName
+
+A new folder will be created with roleName with following sub-directories:
+
+defaults
+files
+handlers
+meta
+tasks
+templates
+vars
+
+We need to use these directories to define our requirements in respected main.yml in these directories. 
+
+After completion of role, we need to write ansible playbook as follows:
+
+---
+- name: description
+  hosts:
+  become: true
+  roles:
+  - role1
+  - role2
+
+We can execute this playbook
