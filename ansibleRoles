@@ -4,13 +4,14 @@ ansible-galaxy init roleName
 
 A new folder will be created with roleName with following sub-directories:
 
-defaults
-files
-handlers
-meta
-tasks
+defaults/main.yml --- used to define variables
+files --- used to upload files required for the tasks
+handlers/main.yml --- used to define handlers of the tasks
+meta/main.yml --- used to define owner and description of the role
+tasks/main.yml --- used to define tasks
 templates
-vars
+tests/test.yml --- used to define test cases
+vars/main.yml --- used to define variables. This variables will be considered on priority
 
 We need to use these directories to define our requirements in respected main.yml in these directories. 
 
